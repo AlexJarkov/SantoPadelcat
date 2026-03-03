@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Padel | Catálogo</title>
+    <meta name="description" content="Catálogo oficial de Santo Padel: palas, vestimentas y accesorios.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Santo Padel | Catálogo">
+    <meta property="og:description" content="Catálogo oficial de Santo Padel: palas, vestimentas y accesorios.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" sizes="16x16 32x32 48x48" href="imagenes/Cowboy.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="imagenes/applogo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="Santo Padel">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Santo Padel",
+            "url": "https://santopadel.com/",
+            "inLanguage": "es-AR",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://santopadel.com/search.html?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        body.swipe-hub {
+            margin: 0;
+            color: var(--ink);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            background: var(--surface);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .swipe-container {
+            width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            place-items: stretch;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swipe-stage {
+            width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--surface);
+            display: grid;
+            place-items: stretch;
+        }
+
+        .swipe-track {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            touch-action: pan-y;
+        }
+
+        .swipe-track.is-dragging {
+            transition: none !important;
+        }
+
+        .swipe-panel {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+            height: 100vh;
+            max-height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            background: #fff;
+        }
+
+        .swipe-panel iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: #fff;
+        }
+
+        .panel-loading {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.5);
+            pointer-events: none;
+        }
+
+        .swipe-progress {
+            position: fixed;
+            left: 50%;
+            bottom: clamp(18px, 4vw, 32px);
+            transform: translateX(-50%);
+            display: inline-flex;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(17, 17, 17, 0.1);
+            box-shadow: 0 12px 30px rgba(17, 17, 17, 0.12);
+            z-index: 20;
+        }
+
+        .swipe-progress span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(17, 17, 17, 0.2);
+        }
+
+        .swipe-progress span.is-active {
+            background: var(--ink);
+        }
+
+        @media (max-width: 900px) {
+            .swipe-stage {
+                height: 100vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .swipe-progress {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="swipe-hub">
+    <div data-include="header.html"></div>
+    <main class="swipe-container">
+        <div class="swipe-stage" role="region" aria-label="Catálogo deslizable">
+        <div class="swipe-track" id="swipe-track">
+            <section class="swipe-panel" data-src="catalogo.html" aria-label="Inicio">
+                <iframe title="Inicio" loading="lazy"></iframe>
+                <div class="panel-loading">Cargando Inicio…</div>
+            </section>
+            <section class="swipe-panel" data-src="palas.html" aria-label="Palas">
+                <iframe title="Palas" loading="lazy"></iframe>
+                <div class="panel-loading">Cargando Palas…</div>
+            </section>
+            <section class="swipe-panel" data-src="vestimentas.html" aria-label="Vestimentas">
+                <iframe title="Vestimentas" loading="lazy"></iframe>
+                <div class="panel-loading">Cargando Vestimentas…</div>
+            </section>
+            <section class="swipe-panel" data-src="accesorios.html" aria-label="Accesorios">
+                <iframe title="Accesorios" loading="lazy"></iframe>
+                <div class="panel-loading">Cargando Accesorios…</div>
+            </section>
+        </div>
+        <div class="swipe-progress" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    </main>
+    <div data-include="catalog-nav.html"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stage = document.querySelector('.swipe-stage');
+            const track = document.getElementById('swipe-track');
+            if (!stage || !track) return;
+
+            const panels = Array.from(track.querySelectorAll('.swipe-panel'));
+            const dots = Array.from(document.querySelectorAll('.swipe-progress span'));
+            const panelPaths = panels.map(panel => normalizePath(panel.dataset.src));
+            const dragState = { active: false, pending: false, startX: 0, startY: 0, prevTranslate: 0, currentTranslate: 0, pointerId: null };
+            let navController = null;
+            let headerLinks = [];
+            let currentIndex = 0;
+            const pointerShouldHandle = (event) => !event.pointerType || event.pointerType !== 'touch';
+            const horizontalDeadZone = 32;
+            const verticalAbortThreshold = 18;
+
+            function normalizePath(href) {
+                try {
+                    const url = new URL(href, window.location.href);
+                    let path = url.pathname.replace(/\/+/g, '/');
+                    if (!path.startsWith('/')) path = `/${path}`;
+                    if (path === '/' || path === '') path = '/index.html';
+                    if (path.endsWith('/')) path = `${path}index.html`;
+                    return path;
+                } catch (error) {
+                    return href;
+                }
+            }
+
+            const stageWidth = () => stage.getBoundingClientRect().width;
+            const applyTranslate = (value) => track.style.transform = `translateX(${value}px)`;
+
+            const updateDots = () => {
+                dots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === currentIndex));
+            };
+
+            const setHomeChrome = (isHome) => {
+                document.body.classList.toggle('is-home-panel', isHome);
+            };
+
+            const loadPanel = (index) => {
+                const panel = panels[index];
+                if (!panel) return;
+                const iframe = panel.querySelector('iframe');
+                if (!iframe || iframe.dataset.loaded === 'true') return;
+                iframe.src = panel.dataset.src;
+                iframe.dataset.loaded = 'true';
+                iframe.addEventListener('load', () => {
+                    panel.querySelector('.panel-loading')?.remove();
+                    bindFrameGestures(iframe);
+                }, { once: true });
+            };
+
+            const syncHeaderLinks = (href) => {
+                if (!headerLinks.length) return;
+                const normalized = normalizePath(href);
+                headerLinks.forEach(link => {
+                    const match = normalizePath(link.getAttribute('href')) === normalized;
+                    link.classList.toggle('is-active', match);
+                    if (match) {
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            const snapToIndex = (instant = false) => {
+                const target = -currentIndex * stageWidth();
+                if (instant) {
+                    track.classList.add('is-dragging');
+                    applyTranslate(target);
+                    requestAnimationFrame(() => track.classList.remove('is-dragging'));
+                } else {
+                    applyTranslate(target);
+                }
+                dragState.prevTranslate = target;
+                dragState.currentTranslate = target;
+            };
+
+            const updateActive = (index) => {
+                currentIndex = Math.max(0, Math.min(index, panels.length - 1));
+                snapToIndex();
+                updateDots();
+                loadPanel(currentIndex);
+                loadPanel(currentIndex + 1);
+                loadPanel(currentIndex - 1);
+                const activeSrc = panels[currentIndex]?.dataset.src;
+                navController?.setActiveByHref(activeSrc);
+                syncHeaderLinks(activeSrc);
+                setHomeChrome(currentIndex === 0);
+            };
+
+            const handleSwipe = (direction) => {
+                if (direction === 'next') {
+                    updateActive(currentIndex + 1);
+                } else if (direction === 'prev') {
+                    updateActive(currentIndex - 1);
+                }
+            };
+
+            const findIndexByHref = (href) => panelPaths.indexOf(normalizePath(href));
+
+            const goToHref = (href) => {
+                const idx = findIndexByHref(href);
+                if (idx >= 0) {
+                    updateActive(idx);
+                    return true;
+                }
+                return false;
+            };
+
+            window.catalogShellNavigate = (href) => {
+                if (!href) return false;
+                return goToHref(href);
+            };
+
+            const startDrag = (x, y = 0, pointerId = null, immediate = false) => {
+                if (dragState.active || dragState.pending) return;
+                dragState.pointerId = pointerId;
+                dragState.startX = x;
+                dragState.startY = y;
+                dragState.prevTranslate = -currentIndex * stageWidth();
+                dragState.currentTranslate = dragState.prevTranslate;
+                dragState.pending = !immediate;
+                dragState.active = immediate;
+                if (immediate) {
+                    track.classList.add('is-dragging');
+                }
+            };
+
+            const cancelPendingDrag = () => {
+                dragState.pending = false;
+                dragState.pointerId = null;
+            };
+
+            const activateDrag = () => {
+                if (dragState.active) return;
+                dragState.active = true;
+                dragState.pending = false;
+                track.classList.add('is-dragging');
+            };
+
+            const moveDrag = (x, y = null, pointerId = null) => {
+                if (!dragState.active && !dragState.pending) return;
+                if (dragState.pointerId !== null && pointerId !== null && pointerId !== dragState.pointerId) return;
+
+                if (dragState.pending) {
+                    if (y === null) {
+                        activateDrag();
+                    } else {
+                        const deltaX = x - dragState.startX;
+                        const deltaY = y - dragState.startY;
+                        if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > verticalAbortThreshold) {
+                            cancelPendingDrag();
+                            return;
+                        }
+                        if (Math.abs(deltaX) >= horizontalDeadZone) {
+                            activateDrag();
+                        } else {
+                            return;
+                        }
+                    }
+                }
+
+                if (!dragState.active) return;
+                dragState.currentTranslate = dragState.prevTranslate + (x - dragState.startX);
+                applyTranslate(dragState.currentTranslate);
+            };
+
+            const endDrag = (pointerId = null) => {
+                if (!dragState.active && !dragState.pending) return;
+                if (dragState.pointerId !== null && pointerId !== null && pointerId !== dragState.pointerId) return;
+
+                if (dragState.pending && !dragState.active) {
+                    cancelPendingDrag();
+                    return;
+                }
+
+                dragState.active = false;
+                dragState.pending = false;
+                dragState.pointerId = null;
+                track.classList.remove('is-dragging');
+                const moved = dragState.currentTranslate - dragState.prevTranslate;
+                const snapThreshold = Math.min(stageWidth() * 0.18, 260);
+                if (Math.abs(moved) > snapThreshold) {
+                    handleSwipe(moved < 0 ? 'next' : 'prev');
+                } else {
+                    snapToIndex();
+                }
+            };
+
+            const bindFrameGestures = (iframe) => {
+                if (!iframe || iframe.dataset.gestureReady === 'true') return;
+                iframe.dataset.gestureReady = 'true';
+                try {
+                    const doc = iframe.contentWindow?.document;
+                    if (!doc) return;
+                    doc.addEventListener('touchstart', (event) => {
+                        if (event.touches.length !== 1) return;
+                        const touch = event.touches[0];
+                        startDrag(touch.clientX, touch.clientY);
+                    }, { passive: true });
+                    doc.addEventListener('touchmove', (event) => {
+                        if (event.touches.length !== 1) return;
+                        const touch = event.touches[0];
+                        moveDrag(touch.clientX, touch.clientY);
+                    }, { passive: true });
+                    doc.addEventListener('touchend', endDrag);
+                    doc.addEventListener('touchcancel', endDrag);
+                    doc.addEventListener('pointerdown', (event) => {
+                        if (!pointerShouldHandle(event) || event.button !== 0) return;
+                        startDrag(event.clientX, event.clientY, event.pointerId, true);
+                    });
+                    doc.addEventListener('pointermove', (event) => {
+                        if (!pointerShouldHandle(event)) return;
+                        if (event.buttons === 0) return;
+                        moveDrag(event.clientX, event.clientY, event.pointerId);
+                    });
+                    doc.addEventListener('pointerup', (event) => {
+                        if (!pointerShouldHandle(event)) return;
+                        endDrag(event.pointerId);
+                    });
+                    doc.addEventListener('pointercancel', (event) => {
+                        if (!pointerShouldHandle(event)) return;
+                        endDrag(event.pointerId);
+                    });
+                } catch (error) {
+                    // ignore frames blocked by policies (not expected here)
+                }
+            };
+
+            track.addEventListener('touchstart', (event) => {
+                if (event.touches.length !== 1) return;
+                const touch = event.touches[0];
+                startDrag(touch.clientX, touch.clientY);
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (event) => {
+                if (event.touches.length !== 1) return;
+                const touch = event.touches[0];
+                moveDrag(touch.clientX, touch.clientY);
+            }, { passive: true });
+
+            track.addEventListener('touchend', () => endDrag());
+            track.addEventListener('touchcancel', () => endDrag());
+
+            track.addEventListener('pointerdown', (event) => {
+                if (!pointerShouldHandle(event) || event.button !== 0) return;
+                startDrag(event.clientX, event.clientY, event.pointerId, true);
+                if (track.setPointerCapture) {
+                    try {
+                        track.setPointerCapture(event.pointerId);
+                    } catch (error) {
+                        // ignore capture errors
+                    }
+                }
+                event.preventDefault();
+            });
+
+            track.addEventListener('pointermove', (event) => {
+                if (!pointerShouldHandle(event)) return;
+                if (!dragState.active) return;
+                event.preventDefault();
+                moveDrag(event.clientX, event.clientY, event.pointerId);
+            });
+
+            const releasePointer = (event) => {
+                if (!pointerShouldHandle(event)) return;
+                if (event.type === 'pointerleave' && track.hasPointerCapture && track.hasPointerCapture(event.pointerId)) {
+                    return;
+                }
+                if (track.releasePointerCapture) {
+                    try {
+                        track.releasePointerCapture(event.pointerId);
+                    } catch (error) {
+                        // ignore capture errors
+                    }
+                }
+                endDrag(event.pointerId);
+            };
+
+            track.addEventListener('pointerup', releasePointer);
+            track.addEventListener('pointercancel', releasePointer);
+            track.addEventListener('pointerleave', releasePointer);
+
+            window.addEventListener('resize', () => snapToIndex(true));
+
+            const initDockNav = (controller) => {
+                const dock = document.getElementById('catalog-dock');
+                if (!dock) return;
+                dock.addEventListener('click', (event) => {
+                    const link = event.target.closest('.catalog-dock__link');
+                    if (!link) return;
+                    const href = link.dataset.target || link.getAttribute('href');
+                    if (goToHref(href)) {
+                        event.preventDefault();
+                    }
+                });
+                controller?.setActiveByHref(panels[currentIndex]?.dataset.src);
+            };
+
+            document.addEventListener('catalogNavReady', (event) => {
+                navController = event.detail;
+                initDockNav(navController);
+            }, { once: true });
+
+            if (window.catalogNavController) {
+                navController = window.catalogNavController;
+                initDockNav(navController);
+            }
+
+            const initHeaderNav = () => {
+                const links = Array.from(document.querySelectorAll('.nav-link'));
+                if (!links.length) {
+                    setTimeout(initHeaderNav, 80);
+                    return;
+                }
+                headerLinks = links;
+                links.forEach(link => {
+                    const idx = findIndexByHref(link.getAttribute('href'));
+                    if (idx >= 0) {
+                        link.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            updateActive(idx);
+                        });
+                    }
+                });
+                syncHeaderLinks(panels[currentIndex]?.dataset.src);
+            };
+            initHeaderNav();
+
+            updateActive(0);
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+    <script src="js/include.js"></script>
+</body>
+
+</html>
