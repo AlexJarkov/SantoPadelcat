@@ -1,0 +1,11 @@
+{
+  "brands": [
+    { "id": "bullpadel", "name": "Bullpadel" },
+    { "id": "head", "name": "Head" },
+    { "id": "adidas", "name": "Adidas" },
+    { "id": "nox", "name": "NOX" },
+    { "id": "wilson", "name": "Wilson" },
+    { "id": "babolat", "name": "Babolat" },
+    { "id": "siux", "name": "Siux" }
+  ]
+}

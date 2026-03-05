@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías | Santo Padel Bolivia</title>
+  <meta name="description" content="Explorá todas las categorías de Santo Padel: paletas, calzado, indumentaria y accesorios de las mejores marcas del mundo.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
+  <link rel="manifest" href="../manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <style>
+    .categorias-page { padding: 7rem 3rem 5rem; }
+    .cat-grid-full {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .cat-card-lg {
+      position: relative;
+      background: linear-gradient(145deg, rgba(30,60,63,0.4), rgba(15,30,32,0.8));
+      border: 1px solid rgba(177,229,1,0.06);
+      padding: 3rem 2.5rem;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.4s;
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .cat-card-lg:hover {
+      border-color: rgba(177,229,1,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .cat-card-lg:hover .cat-arrow { opacity: 1; transform: translateX(0); }
+    .cat-icon-lg { font-size: 3.5rem; margin-bottom: 1.5rem; display: block; }
+    .cat-card-lg h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+    }
+    .cat-card-lg p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; max-width: 400px; }
+    .cat-card-lg .cat-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-top: 1.2rem;
+    }
+    .cat-arrow {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.3s;
+    }
+    @media (max-width: 768px) {
+      .categorias-page { padding: 6rem 1.5rem 3rem; }
+      .cat-grid-full { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="navbar-root"></div>
+
+<main class="categorias-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../">Inicio</a>
+    <span>/</span>
+    <span>Categorías</span>
+  </nav>
+
+  <div class="section-header">
+    <div>
+      <div class="section-tag">// Explora</div>
+      <h1 class="section-title">CATEGORÍAS</h1>
+    </div>
+  </div>
+
+  <div class="cat-grid-full" id="categories-grid"></div>
+</main>
+
+<div id="footer-root"></div>
+<div id="wa-root"></div>
+
+<script type="module">
+  import { initComponents } from "../assets/js/components.js";
+  import { CONFIG } from "../assets/js/config.js";
+
+  initComponents("categorias");
+
+  async function loadCategories() {
+    const res = await fetch(`${CONFIG.BASE_URL}/data/categories.json?v=1.0`);
+    const data = await res.json();
+    const grid = document.getElementById("categories-grid");
+    grid.innerHTML = data.categories.map(cat => `
+      <a href="${CONFIG.BASE_URL}/productos/?categoria=${cat.id}" class="cat-card-lg">
+        <span class="cat-icon-lg">${cat.icon}</span>
+        <h2>${cat.name.toUpperCase()}</h2>
+        <p>${cat.description}</p>
+        <div class="cat-count">+${cat.productCount} PRODUCTOS</div>
+        <span class="cat-arrow">→</span>
+      </a>
+    `).join("");
+  }
+
+  loadCategories();
+</script>
+</body>
+</html>

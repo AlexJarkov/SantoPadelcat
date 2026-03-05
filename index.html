@@ -1,531 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santo Padel | Catálogo</title>
-    <meta name="description" content="Catálogo oficial de Santo Padel: palas, vestimentas y accesorios.">
-    <meta name="robots" content="index,follow">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Santo Padel | Catálogo">
-    <meta property="og:description" content="Catálogo oficial de Santo Padel: palas, vestimentas y accesorios.">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" sizes="16x16 32x32 48x48" href="imagenes/Cowboy.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="imagenes/applogo.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="white">
-    <meta name="apple-mobile-web-app-title" content="Santo Padel">
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Santo Padel",
-            "url": "https://santopadel.com/",
-            "inLanguage": "es-AR",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://santopadel.com/search.html?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-    <style>
-        :root {
-            color-scheme: light;
-        }
-
-        body.swipe-hub {
-            margin: 0;
-            color: var(--ink);
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-            overflow: hidden;
-            background: var(--surface);
-            width: 100%;
-            max-width: 100%;
-        }
-
-        .swipe-container {
-            width: 100vw;
-            max-width: 100vw;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: grid;
-            place-items: stretch;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swipe-stage {
-            width: 100vw;
-            max-width: 100vw;
-            height: 100vh;
-            margin: 0;
-            position: relative;
-            overflow: hidden;
-            background: var(--surface);
-            display: grid;
-            place-items: stretch;
-        }
-
-        .swipe-track {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
-            touch-action: pan-y;
-        }
-
-        .swipe-track.is-dragging {
-            transition: none !important;
-        }
-
-        .swipe-panel {
-            flex: 0 0 100%;
-            width: 100%;
-            max-width: 100%;
-            height: 100vh;
-            max-height: 100vh;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            position: relative;
-            background: #fff;
-        }
-
-        .swipe-panel iframe {
-            border: none;
-            width: 100%;
-            height: 100%;
-            display: block;
-            background: #fff;
-        }
-
-        .panel-loading {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(17, 17, 17, 0.5);
-            pointer-events: none;
-        }
-
-        .swipe-progress {
-            position: fixed;
-            left: 50%;
-            bottom: clamp(18px, 4vw, 32px);
-            transform: translateX(-50%);
-            display: inline-flex;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(17, 17, 17, 0.1);
-            box-shadow: 0 12px 30px rgba(17, 17, 17, 0.12);
-            z-index: 20;
-        }
-
-        .swipe-progress span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(17, 17, 17, 0.2);
-        }
-
-        .swipe-progress span.is-active {
-            background: var(--ink);
-        }
-
-        @media (max-width: 900px) {
-            .swipe-stage {
-                height: 100vh;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .swipe-progress {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santo Padel — Tienda de Padel en Bolivia</title>
+  <meta name="description" content="Equipamiento profesional de padel en Bolivia. Paletas, calzado, indumentaria y accesorios de Bullpadel, Head, Adidas, NOX, Wilson, Babolat y Siux.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Santo Padel — Tienda de Padel en Bolivia">
+  <meta property="og:description" content="Equipamiento profesional de padel. Consultá disponibilidad por WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
+<body>
 
-<body class="swipe-hub">
-    <div data-include="header.html"></div>
-    <main class="swipe-container">
-        <div class="swipe-stage" role="region" aria-label="Catálogo deslizable">
-        <div class="swipe-track" id="swipe-track">
-            <section class="swipe-panel" data-src="catalogo.html" aria-label="Inicio">
-                <iframe title="Inicio" loading="lazy"></iframe>
-                <div class="panel-loading">Cargando Inicio…</div>
-            </section>
-            <section class="swipe-panel" data-src="palas.html" aria-label="Palas">
-                <iframe title="Palas" loading="lazy"></iframe>
-                <div class="panel-loading">Cargando Palas…</div>
-            </section>
-            <section class="swipe-panel" data-src="vestimentas.html" aria-label="Vestimentas">
-                <iframe title="Vestimentas" loading="lazy"></iframe>
-                <div class="panel-loading">Cargando Vestimentas…</div>
-            </section>
-            <section class="swipe-panel" data-src="accesorios.html" aria-label="Accesorios">
-                <iframe title="Accesorios" loading="lazy"></iframe>
-                <div class="panel-loading">Cargando Accesorios…</div>
-            </section>
-        </div>
-        <div class="swipe-progress" aria-hidden="true">
-            <span class="is-active"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+<div id="navbar-root"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-line h" style="top:20%"></div>
+  <div class="hero-grid-line h" style="top:50%"></div>
+  <div class="hero-grid-line h" style="top:80%"></div>
+  <div class="hero-grid-line v" style="left:25%"></div>
+  <div class="hero-grid-line v" style="left:75%"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span class="dot"></span>Temporada 2026</div>
+    <h1>ELEVÁ TU<br><span class="accent">JUEGO</span> AL<br><span class="outline">SIGUIENTE</span> NIVEL</h1>
+    <p>Equipamiento profesional de padel: paletas, calzado, indumentaria y accesorios de las mejores marcas del mundo.</p>
+    <div class="hero-buttons">
+      <a href="productos/" class="btn-primary">VER COLECCIÓN →</a>
+      <a href="categorias/" class="btn-outline">EXPLORAR</a>
     </div>
-    </main>
-    <div data-include="catalog-nav.html"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const stage = document.querySelector('.swipe-stage');
-            const track = document.getElementById('swipe-track');
-            if (!stage || !track) return;
+  </div>
+  <div class="hero-visual">
+    <div class="hero-racket">
+      <div class="hero-racket-circle"></div>
+      <div class="hero-racket-circle"></div>
+      <div class="hero-racket-circle"></div>
+      <div class="hero-racket-center">SP</div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+    </div>
+  </div>
+</section>
 
-            const panels = Array.from(track.querySelectorAll('.swipe-panel'));
-            const dots = Array.from(document.querySelectorAll('.swipe-progress span'));
-            const panelPaths = panels.map(panel => normalizePath(panel.dataset.src));
-            const dragState = { active: false, pending: false, startX: 0, startY: 0, prevTranslate: 0, currentTranslate: 0, pointerId: null };
-            let navController = null;
-            let headerLinks = [];
-            let currentIndex = 0;
-            const pointerShouldHandle = (event) => !event.pointerType || event.pointerType !== 'touch';
-            const horizontalDeadZone = 32;
-            const verticalAbortThreshold = 18;
+<!-- BRANDS -->
+<section class="brands">
+  <div class="brands-inner">
+    <span class="brand-item">BULLPADEL</span>
+    <span class="brand-item">HEAD</span>
+    <span class="brand-item">ADIDAS</span>
+    <span class="brand-item">NOX</span>
+    <span class="brand-item">WILSON</span>
+    <span class="brand-item">BABOLAT</span>
+    <span class="brand-item">SIUX</span>
+  </div>
+</section>
 
-            function normalizePath(href) {
-                try {
-                    const url = new URL(href, window.location.href);
-                    let path = url.pathname.replace(/\/+/g, '/');
-                    if (!path.startsWith('/')) path = `/${path}`;
-                    if (path === '/' || path === '') path = '/index.html';
-                    if (path.endsWith('/')) path = `${path}index.html`;
-                    return path;
-                } catch (error) {
-                    return href;
-                }
-            }
+<!-- CATEGORIAS -->
+<section class="categories" id="categorias">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">// Explora</div>
+      <h2 class="section-title">CATEGORÍAS</h2>
+    </div>
+    <a href="categorias/" class="section-link">Ver todas →</a>
+  </div>
+  <div class="categories-grid">
+    <a href="productos/?categoria=paletas" class="cat-card">
+      <span class="cat-icon">🏓</span>
+      <h3>PALETAS</h3>
+      <p>Control, potencia y balance. Encontrá tu paleta ideal.</p>
+      <div class="cat-count">+120 PRODUCTOS</div>
+      <span class="cat-arrow">→</span>
+    </a>
+    <a href="productos/?categoria=calzado" class="cat-card">
+      <span class="cat-icon">👟</span>
+      <h3>CALZADO</h3>
+      <p>Agarre y comodidad para cada superficie de juego.</p>
+      <div class="cat-count">+85 PRODUCTOS</div>
+      <span class="cat-arrow">→</span>
+    </a>
+    <a href="productos/?categoria=indumentaria" class="cat-card">
+      <span class="cat-icon">👕</span>
+      <h3>INDUMENTARIA</h3>
+      <p>Ropa técnica con diseño y rendimiento profesional.</p>
+      <div class="cat-count">+200 PRODUCTOS</div>
+      <span class="cat-arrow">→</span>
+    </a>
+    <a href="productos/?categoria=accesorios" class="cat-card">
+      <span class="cat-icon">🎒</span>
+      <h3>ACCESORIOS</h3>
+      <p>Paleteros, grips, protectores, pelotas y más.</p>
+      <div class="cat-count">+150 PRODUCTOS</div>
+      <span class="cat-arrow">→</span>
+    </a>
+  </div>
+</section>
 
-            const stageWidth = () => stage.getBoundingClientRect().width;
-            const applyTranslate = (value) => track.style.transform = `translateX(${value}px)`;
+<!-- PRODUCTOS DESTACADOS -->
+<section class="products" id="productos">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">// Tienda</div>
+      <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
+    </div>
+    <a href="productos/" class="section-link">Ver catálogo completo →</a>
+  </div>
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-category="todos">Todos</button>
+    <button class="filter-tab" data-category="paletas">Paletas</button>
+    <button class="filter-tab" data-category="calzado">Calzado</button>
+    <button class="filter-tab" data-category="indumentaria">Indumentaria</button>
+    <button class="filter-tab" data-category="accesorios">Accesorios</button>
+  </div>
+  <div class="products-grid" id="home-products-grid"></div>
+</section>
 
-            const updateDots = () => {
-                dots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === currentIndex));
-            };
+<!-- FEATURED BANNER -->
+<section class="featured" id="destacado">
+  <div class="featured-banner">
+    <div class="featured-bg-text">SANTO</div>
+    <div class="featured-content">
+      <div class="featured-label">⚡ PRODUCTO ESTRELLA</div>
+      <h2>BULLPADEL <span class="accent">HACK 04</span><br>EDICIÓN LIMITADA</h2>
+      <p>La paleta que usan los profesionales del World Padel Tour. Carbono multicapa 18K, balance medio-alto, máxima potencia sin perder control.</p>
+      <a id="featured-wa-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.885a.5.5 0 0 0 .606.64l6.249-1.637A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.67-.522-5.188-1.43l-.372-.22-3.856 1.011 1.03-3.763-.241-.389A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        CONSULTAR POR WHATSAPP
+      </a>
+      <div class="featured-stats">
+        <div><div class="stat-value">18K</div><div class="stat-label">Carbono</div></div>
+        <div><div class="stat-value">365g</div><div class="stat-label">Peso</div></div>
+        <div><div class="stat-value">4.9</div><div class="stat-label">Rating</div></div>
+      </div>
+    </div>
+    <div class="featured-visual">
+      <div class="featured-circle"></div>
+      <svg viewBox="0 0 200 200" style="width:100%;height:100%;opacity:0.12">
+        <circle cx="100" cy="70" r="50" fill="#b1e501"/>
+        <rect x="88" y="120" width="24" height="65" rx="8" fill="#b1e501"/>
+      </svg>
+      <div class="featured-price-tag"><small>DESDE</small>$499.99</div>
+    </div>
+  </div>
+</section>
 
-            const setHomeChrome = (isHome) => {
-                document.body.classList.toggle('is-home-panel', isHome);
-            };
+<div id="footer-root"></div>
+<div id="wa-root"></div>
 
-            const loadPanel = (index) => {
-                const panel = panels[index];
-                if (!panel) return;
-                const iframe = panel.querySelector('iframe');
-                if (!iframe || iframe.dataset.loaded === 'true') return;
-                iframe.src = panel.dataset.src;
-                iframe.dataset.loaded = 'true';
-                iframe.addEventListener('load', () => {
-                    panel.querySelector('.panel-loading')?.remove();
-                    bindFrameGestures(iframe);
-                }, { once: true });
-            };
+<script type="module">
+  import { initComponents } from "./assets/js/components.js";
+  import { initFeaturedGrid, fetchProducts } from "./assets/js/products.js";
+  import { buildWhatsAppURL } from "./assets/js/whatsapp.js";
 
-            const syncHeaderLinks = (href) => {
-                if (!headerLinks.length) return;
-                const normalized = normalizePath(href);
-                headerLinks.forEach(link => {
-                    const match = normalizePath(link.getAttribute('href')) === normalized;
-                    link.classList.toggle('is-active', match);
-                    if (match) {
-                        link.setAttribute('aria-current', 'page');
-                    } else {
-                        link.removeAttribute('aria-current');
-                    }
-                });
-            };
+  initComponents("home");
+  initFeaturedGrid("home-products-grid", 8);
 
-            const snapToIndex = (instant = false) => {
-                const target = -currentIndex * stageWidth();
-                if (instant) {
-                    track.classList.add('is-dragging');
-                    applyTranslate(target);
-                    requestAnimationFrame(() => track.classList.remove('is-dragging'));
-                } else {
-                    applyTranslate(target);
-                }
-                dragState.prevTranslate = target;
-                dragState.currentTranslate = target;
-            };
-
-            const updateActive = (index) => {
-                currentIndex = Math.max(0, Math.min(index, panels.length - 1));
-                snapToIndex();
-                updateDots();
-                loadPanel(currentIndex);
-                loadPanel(currentIndex + 1);
-                loadPanel(currentIndex - 1);
-                const activeSrc = panels[currentIndex]?.dataset.src;
-                navController?.setActiveByHref(activeSrc);
-                syncHeaderLinks(activeSrc);
-                setHomeChrome(currentIndex === 0);
-            };
-
-            const handleSwipe = (direction) => {
-                if (direction === 'next') {
-                    updateActive(currentIndex + 1);
-                } else if (direction === 'prev') {
-                    updateActive(currentIndex - 1);
-                }
-            };
-
-            const findIndexByHref = (href) => panelPaths.indexOf(normalizePath(href));
-
-            const goToHref = (href) => {
-                const idx = findIndexByHref(href);
-                if (idx >= 0) {
-                    updateActive(idx);
-                    return true;
-                }
-                return false;
-            };
-
-            window.catalogShellNavigate = (href) => {
-                if (!href) return false;
-                return goToHref(href);
-            };
-
-            const startDrag = (x, y = 0, pointerId = null, immediate = false) => {
-                if (dragState.active || dragState.pending) return;
-                dragState.pointerId = pointerId;
-                dragState.startX = x;
-                dragState.startY = y;
-                dragState.prevTranslate = -currentIndex * stageWidth();
-                dragState.currentTranslate = dragState.prevTranslate;
-                dragState.pending = !immediate;
-                dragState.active = immediate;
-                if (immediate) {
-                    track.classList.add('is-dragging');
-                }
-            };
-
-            const cancelPendingDrag = () => {
-                dragState.pending = false;
-                dragState.pointerId = null;
-            };
-
-            const activateDrag = () => {
-                if (dragState.active) return;
-                dragState.active = true;
-                dragState.pending = false;
-                track.classList.add('is-dragging');
-            };
-
-            const moveDrag = (x, y = null, pointerId = null) => {
-                if (!dragState.active && !dragState.pending) return;
-                if (dragState.pointerId !== null && pointerId !== null && pointerId !== dragState.pointerId) return;
-
-                if (dragState.pending) {
-                    if (y === null) {
-                        activateDrag();
-                    } else {
-                        const deltaX = x - dragState.startX;
-                        const deltaY = y - dragState.startY;
-                        if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > verticalAbortThreshold) {
-                            cancelPendingDrag();
-                            return;
-                        }
-                        if (Math.abs(deltaX) >= horizontalDeadZone) {
-                            activateDrag();
-                        } else {
-                            return;
-                        }
-                    }
-                }
-
-                if (!dragState.active) return;
-                dragState.currentTranslate = dragState.prevTranslate + (x - dragState.startX);
-                applyTranslate(dragState.currentTranslate);
-            };
-
-            const endDrag = (pointerId = null) => {
-                if (!dragState.active && !dragState.pending) return;
-                if (dragState.pointerId !== null && pointerId !== null && pointerId !== dragState.pointerId) return;
-
-                if (dragState.pending && !dragState.active) {
-                    cancelPendingDrag();
-                    return;
-                }
-
-                dragState.active = false;
-                dragState.pending = false;
-                dragState.pointerId = null;
-                track.classList.remove('is-dragging');
-                const moved = dragState.currentTranslate - dragState.prevTranslate;
-                const snapThreshold = Math.min(stageWidth() * 0.18, 260);
-                if (Math.abs(moved) > snapThreshold) {
-                    handleSwipe(moved < 0 ? 'next' : 'prev');
-                } else {
-                    snapToIndex();
-                }
-            };
-
-            const bindFrameGestures = (iframe) => {
-                if (!iframe || iframe.dataset.gestureReady === 'true') return;
-                iframe.dataset.gestureReady = 'true';
-                try {
-                    const doc = iframe.contentWindow?.document;
-                    if (!doc) return;
-                    doc.addEventListener('touchstart', (event) => {
-                        if (event.touches.length !== 1) return;
-                        const touch = event.touches[0];
-                        startDrag(touch.clientX, touch.clientY);
-                    }, { passive: true });
-                    doc.addEventListener('touchmove', (event) => {
-                        if (event.touches.length !== 1) return;
-                        const touch = event.touches[0];
-                        moveDrag(touch.clientX, touch.clientY);
-                    }, { passive: true });
-                    doc.addEventListener('touchend', endDrag);
-                    doc.addEventListener('touchcancel', endDrag);
-                    doc.addEventListener('pointerdown', (event) => {
-                        if (!pointerShouldHandle(event) || event.button !== 0) return;
-                        startDrag(event.clientX, event.clientY, event.pointerId, true);
-                    });
-                    doc.addEventListener('pointermove', (event) => {
-                        if (!pointerShouldHandle(event)) return;
-                        if (event.buttons === 0) return;
-                        moveDrag(event.clientX, event.clientY, event.pointerId);
-                    });
-                    doc.addEventListener('pointerup', (event) => {
-                        if (!pointerShouldHandle(event)) return;
-                        endDrag(event.pointerId);
-                    });
-                    doc.addEventListener('pointercancel', (event) => {
-                        if (!pointerShouldHandle(event)) return;
-                        endDrag(event.pointerId);
-                    });
-                } catch (error) {
-                    // ignore frames blocked by policies (not expected here)
-                }
-            };
-
-            track.addEventListener('touchstart', (event) => {
-                if (event.touches.length !== 1) return;
-                const touch = event.touches[0];
-                startDrag(touch.clientX, touch.clientY);
-            }, { passive: true });
-
-            track.addEventListener('touchmove', (event) => {
-                if (event.touches.length !== 1) return;
-                const touch = event.touches[0];
-                moveDrag(touch.clientX, touch.clientY);
-            }, { passive: true });
-
-            track.addEventListener('touchend', () => endDrag());
-            track.addEventListener('touchcancel', () => endDrag());
-
-            track.addEventListener('pointerdown', (event) => {
-                if (!pointerShouldHandle(event) || event.button !== 0) return;
-                startDrag(event.clientX, event.clientY, event.pointerId, true);
-                if (track.setPointerCapture) {
-                    try {
-                        track.setPointerCapture(event.pointerId);
-                    } catch (error) {
-                        // ignore capture errors
-                    }
-                }
-                event.preventDefault();
-            });
-
-            track.addEventListener('pointermove', (event) => {
-                if (!pointerShouldHandle(event)) return;
-                if (!dragState.active) return;
-                event.preventDefault();
-                moveDrag(event.clientX, event.clientY, event.pointerId);
-            });
-
-            const releasePointer = (event) => {
-                if (!pointerShouldHandle(event)) return;
-                if (event.type === 'pointerleave' && track.hasPointerCapture && track.hasPointerCapture(event.pointerId)) {
-                    return;
-                }
-                if (track.releasePointerCapture) {
-                    try {
-                        track.releasePointerCapture(event.pointerId);
-                    } catch (error) {
-                        // ignore capture errors
-                    }
-                }
-                endDrag(event.pointerId);
-            };
-
-            track.addEventListener('pointerup', releasePointer);
-            track.addEventListener('pointercancel', releasePointer);
-            track.addEventListener('pointerleave', releasePointer);
-
-            window.addEventListener('resize', () => snapToIndex(true));
-
-            const initDockNav = (controller) => {
-                const dock = document.getElementById('catalog-dock');
-                if (!dock) return;
-                dock.addEventListener('click', (event) => {
-                    const link = event.target.closest('.catalog-dock__link');
-                    if (!link) return;
-                    const href = link.dataset.target || link.getAttribute('href');
-                    if (goToHref(href)) {
-                        event.preventDefault();
-                    }
-                });
-                controller?.setActiveByHref(panels[currentIndex]?.dataset.src);
-            };
-
-            document.addEventListener('catalogNavReady', (event) => {
-                navController = event.detail;
-                initDockNav(navController);
-            }, { once: true });
-
-            if (window.catalogNavController) {
-                navController = window.catalogNavController;
-                initDockNav(navController);
-            }
-
-            const initHeaderNav = () => {
-                const links = Array.from(document.querySelectorAll('.nav-link'));
-                if (!links.length) {
-                    setTimeout(initHeaderNav, 80);
-                    return;
-                }
-                headerLinks = links;
-                links.forEach(link => {
-                    const idx = findIndexByHref(link.getAttribute('href'));
-                    if (idx >= 0) {
-                        link.addEventListener('click', (event) => {
-                            event.preventDefault();
-                            updateActive(idx);
-                        });
-                    }
-                });
-                syncHeaderLinks(panels[currentIndex]?.dataset.src);
-            };
-            initHeaderNav();
-
-            updateActive(0);
-        });
-    </script>
-    <script src="js/scripts.js"></script>
-    <script src="js/include.js"></script>
+  fetchProducts().then(products => {
+    const hack = products.find(p => p.id === "bullpadel-hack-04");
+    if (hack) document.getElementById("featured-wa-btn").href = buildWhatsAppURL(hack);
+  });
+</script>
 </body>
-
 </html>

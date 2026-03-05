@@ -1,0 +1,196 @@
+{
+  "products": [
+    {
+      "id": "bullpadel-vertex-04-pro",
+      "name": "Vertex 04 Pro",
+      "brand": "bullpadel",
+      "category": "paletas",
+      "price": 389.99,
+      "originalPrice": null,
+      "badge": "new",
+      "rating": 5,
+      "shortDesc": "Paleta profesional de carbono. Forma diamante.",
+      "longDesc": "La Bullpadel Vertex 04 Pro ofrece máxima potencia con carbono multicapa y un punto dulce amplio. Diseñada para jugadores avanzados que buscan agresividad sin sacrificar control.",
+      "specs": {
+        "Peso": "360-375g",
+        "Forma": "Diamante",
+        "Material": "Carbono 12K",
+        "Balance": "Alto",
+        "Nivel": "Avanzado / Profesional"
+      },
+      "images": ["assets/img/productos/bullpadel-vertex-04.webp"],
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "bullpadel-hack-04",
+      "name": "Hack 04 Edición Limitada",
+      "brand": "bullpadel",
+      "category": "paletas",
+      "price": 499.99,
+      "originalPrice": null,
+      "badge": "hot",
+      "rating": 5,
+      "shortDesc": "La paleta del World Padel Tour. Carbono 18K, balance medio-alto.",
+      "longDesc": "La Bullpadel Hack 04 es la paleta que usan los profesionales del World Padel Tour. Carbono multicapa 18K, balance medio-alto, máxima potencia sin perder control. Edición limitada.",
+      "specs": {
+        "Peso": "360-370g",
+        "Forma": "Diamante",
+        "Material": "Carbono 18K",
+        "Balance": "Medio-Alto",
+        "Nivel": "Profesional"
+      },
+      "images": ["assets/img/productos/bullpadel-hack-04.webp"],
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "nox-at10-genius-18k",
+      "name": "AT10 Genius 18K",
+      "brand": "nox",
+      "category": "paletas",
+      "price": 449.99,
+      "originalPrice": null,
+      "badge": null,
+      "rating": 5,
+      "shortDesc": "Carbono 18K con balance alto. Nivel avanzado.",
+      "longDesc": "La NOX AT10 Genius 18K es una paleta de alto rendimiento con fibra de carbono 18K que ofrece una potencia explosiva y control excepcional. Ideal para jugadores de nivel avanzado y profesional.",
+      "specs": {
+        "Peso": "355-370g",
+        "Forma": "Diamante",
+        "Material": "Carbono 18K",
+        "Balance": "Alto",
+        "Nivel": "Avanzado / Profesional"
+      },
+      "images": ["assets/img/productos/nox-at10-genius.webp"],
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "head-sprint-pro-clay",
+      "name": "Sprint Pro Clay",
+      "brand": "head",
+      "category": "calzado",
+      "price": 129.99,
+      "originalPrice": 159.99,
+      "badge": "sale",
+      "rating": 4,
+      "shortDesc": "Zapatillas para superficies de arcilla y cemento.",
+      "longDesc": "Las Head Sprint Pro Clay combinan comodidad, agarre y durabilidad para superficies de arcilla y cemento. Suela herringbone de alto rendimiento y sistema de amortiguación avanzado.",
+      "specs": {
+        "Tipo": "Clay / Cemento",
+        "Material": "Mesh + TPU",
+        "Suela": "Herringbone",
+        "Tallas": "39-46"
+      },
+      "images": ["assets/img/productos/head-sprint-pro.webp"],
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "adidas-club-padel-tee",
+      "name": "Club Padel Tee",
+      "brand": "adidas",
+      "category": "indumentaria",
+      "price": 49.99,
+      "originalPrice": null,
+      "badge": "hot",
+      "rating": 5,
+      "shortDesc": "Camiseta técnica AEROREADY con ventilación.",
+      "longDesc": "La Adidas Club Padel Tee está fabricada con tecnología AEROREADY que absorbe la humedad y mantiene la frescura durante el juego. Diseño ergonómico y tejido ligero de alto rendimiento.",
+      "specs": {
+        "Material": "100% Poliéster reciclado",
+        "Tecnología": "AEROREADY",
+        "Tallas": "XS-3XL",
+        "Género": "Unisex"
+      },
+      "images": ["assets/img/productos/adidas-club-tee.webp"],
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "wilson-paletero-tour-pro",
+      "name": "Paletero Tour Pro",
+      "brand": "wilson",
+      "category": "accesorios",
+      "price": 89.99,
+      "originalPrice": null,
+      "badge": "new",
+      "rating": 4,
+      "shortDesc": "Bolso térmico con capacidad para 6 paletas.",
+      "longDesc": "El Wilson Paletero Tour Pro cuenta con compartimento térmico para 6 paletas, bolsillo para accesorios y correas acolchadas para mayor comodidad. Material resistente al agua.",
+      "specs": {
+        "Capacidad": "6 paletas",
+        "Material": "Poliéster 600D",
+        "Compartimento térmico": "Sí",
+        "Resistente al agua": "Sí"
+      },
+      "images": ["assets/img/productos/wilson-paletero-tour.webp"],
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "babolat-pelotas-pro-tour-x3",
+      "name": "Pelotas Pro Tour x3",
+      "brand": "babolat",
+      "category": "accesorios",
+      "price": 12.99,
+      "originalPrice": null,
+      "badge": null,
+      "rating": 5,
+      "shortDesc": "Pelotas oficiales de competición. Pack x3.",
+      "longDesc": "Las Babolat Pro Tour son las pelotas oficiales de competición con presión regulada y fieltro de alta durabilidad. Aptas para todas las superficies de juego.",
+      "specs": {
+        "Unidades": "3",
+        "Tipo": "Competición",
+        "Presión": "Regulada",
+        "Superficie": "Todas"
+      },
+      "images": ["assets/img/productos/babolat-pelotas.webp"],
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "siux-visera-pro-carbon",
+      "name": "Visera Pro Carbon",
+      "brand": "siux",
+      "category": "accesorios",
+      "price": 24.99,
+      "originalPrice": 29.99,
+      "badge": "sale",
+      "rating": 4,
+      "shortDesc": "Visera ultraligera con banda absorbente.",
+      "longDesc": "La Siux Visera Pro Carbon es una visera ultraligera con banda interior absorbente de sudor y visera con protección UV50+. Ajuste regulable para todo tipo de cabeza.",
+      "specs": {
+        "Material": "Poliéster / Carbon look",
+        "Banda interior": "Absorbente",
+        "Protección UV": "UV50+",
+        "Ajuste": "Regulable"
+      },
+      "images": ["assets/img/productos/siux-visera.webp"],
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "head-pro-grip-overgrip-x3",
+      "name": "Pro Grip Overgrip x3",
+      "brand": "head",
+      "category": "accesorios",
+      "price": 9.99,
+      "originalPrice": null,
+      "badge": null,
+      "rating": 5,
+      "shortDesc": "Grip de tacto seco con máxima absorción.",
+      "longDesc": "El Head Pro Grip Overgrip ofrece tacto seco con máxima absorción de sudor, permitiendo un agarre firme y seguro durante todo el partido. Pack de 3 unidades.",
+      "specs": {
+        "Unidades": "3",
+        "Tacto": "Seco",
+        "Absorción": "Alta",
+        "Grosor": "0.6mm"
+      },
+      "images": ["assets/img/productos/head-overgrip.webp"],
+      "featured": false,
+      "inStock": true
+    }
+  ]
+}

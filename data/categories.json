@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "id": "paletas",
+      "name": "Paletas",
+      "icon": "🏓",
+      "description": "Control, potencia y balance. Encontrá tu paleta ideal.",
+      "productCount": 120
+    },
+    {
+      "id": "calzado",
+      "name": "Calzado",
+      "icon": "👟",
+      "description": "Agarre y comodidad para cada superficie de juego.",
+      "productCount": 85
+    },
+    {
+      "id": "indumentaria",
+      "name": "Indumentaria",
+      "icon": "👕",
+      "description": "Ropa técnica con diseño y rendimiento profesional.",
+      "productCount": 200
+    },
+    {
+      "id": "accesorios",
+      "name": "Accesorios",
+      "icon": "🎒",
+      "description": "Paleteros, grips, protectores, pelotas y más.",
+      "productCount": 150
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros | Santo Padel Bolivia</title>
+  <meta name="description" content="Conocé la historia de Santo Padel, tu tienda especializada en padel en Bolivia.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
+  <link rel="manifest" href="../manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <style>
+    .nosotros-page { padding: 7rem 3rem 5rem; max-width: 900px; margin: 0 auto; }
+    .nosotros-hero {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .nosotros-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .nosotros-hero h1 .accent { color: var(--primary); }
+    .nosotros-hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .nosotros-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 5rem;
+    }
+    .value-card {
+      background: linear-gradient(145deg, rgba(30,60,63,0.4), rgba(15,30,32,0.8));
+      border: 1px solid rgba(177,229,1,0.06);
+      padding: 2rem;
+    }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .value-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+    }
+    .value-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .nosotros-cta {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, rgba(177,229,1,0.06), rgba(30,60,63,0.2));
+      border: 1px solid rgba(177,229,1,0.08);
+    }
+    .nosotros-cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .nosotros-cta h2 .accent { color: var(--primary); }
+    .nosotros-cta p { color: var(--text-muted); margin-bottom: 2rem; }
+    @media (max-width: 768px) {
+      .nosotros-page { padding: 6rem 1.5rem 3rem; }
+      .nosotros-values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="navbar-root"></div>
+
+<main class="nosotros-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../">Inicio</a>
+    <span>/</span>
+    <span>Nosotros</span>
+  </nav>
+
+  <div class="nosotros-hero">
+    <div class="section-tag">// Quiénes somos</div>
+    <h1>SANTO <span class="accent">PADEL</span></h1>
+    <p>Somos la tienda especializada en padel en Bolivia. Traemos el equipamiento profesional de las mejores marcas del mundo directamente a vos.</p>
+  </div>
+
+  <div class="nosotros-values">
+    <div class="value-card">
+      <span class="value-icon">🏆</span>
+      <h3>CALIDAD</h3>
+      <p>Solo trabajamos con marcas y productos de primera línea: Bullpadel, Head, Adidas, NOX, Wilson, Babolat y Siux.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">💬</span>
+      <h3>ATENCIÓN</h3>
+      <p>Asesoramiento personalizado para ayudarte a elegir el equipamiento ideal según tu nivel y estilo de juego.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🇧🇴</span>
+      <h3>BOLIVIA</h3>
+      <p>Orgullosamente bolivianos. Llevamos el padel profesional a todo el país con envíos a La Paz, Cochabamba, Santa Cruz y más.</p>
+    </div>
+  </div>
+
+  <div class="nosotros-cta">
+    <h2>¿TENÉS ALGUNA <span class="accent">CONSULTA</span>?</h2>
+    <p>Escribinos directamente por WhatsApp y te respondemos a la brevedad.</p>
+    <a id="wa-nosotros-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
+      💬 ESCRIBINOS POR WHATSAPP
+    </a>
+  </div>
+</main>
+
+<div id="footer-root"></div>
+<div id="wa-root"></div>
+
+<script type="module">
+  import { initComponents } from "../assets/js/components.js";
+  import { buildGeneralInquiryURL } from "../assets/js/whatsapp.js";
+
+  initComponents("nosotros");
+  document.getElementById("wa-nosotros-btn").href = buildGeneralInquiryURL("Santo Padel y sus productos");
+</script>
+</body>
+</html>
