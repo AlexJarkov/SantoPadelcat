@@ -1,4 +1,22 @@
 // utils.js — Helpers reutilizables
+import { CONFIG } from "./config.js";
+
+/**
+ * Calcula el prefijo relativo según la profundidad de la página actual.
+ * Funciona en localhost, GitHub Pages con subpath y dominio personalizado.
+ * Ejemplo: root → "", /categorias/ → "../", /productos/detalle.html → "../"
+ */
+export function getPrefix() {
+  const base = CONFIG.BASE_URL.replace(/^\/|\/$/g, "");
+  let path = window.location.pathname.replace(/\/$/, "");
+  if (base) {
+    const baseWithSlash = "/" + base;
+    if (path.startsWith(baseWithSlash)) path = path.slice(baseWithSlash.length);
+  }
+  path = path.replace(/^\//, "");
+  const segments = path.split("/").filter(s => s && !s.includes("."));
+  return segments.length > 0 ? "../".repeat(segments.length) : "";
+}
 
 /**
  * Formatea un precio a string con 2 decimales.

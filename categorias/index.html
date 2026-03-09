@@ -93,16 +93,17 @@
 
 <script type="module">
   import { initComponents } from "../assets/js/components.js";
-  import { CONFIG } from "../assets/js/config.js";
+  import { getPrefix } from "../assets/js/utils.js";
 
   initComponents("categorias");
 
   async function loadCategories() {
-    const res = await fetch(`${CONFIG.BASE_URL}/data/categories.json?v=1.0`);
+    const p = getPrefix();
+    const res = await fetch(`${p}data/categories.json?v=1.0`);
     const data = await res.json();
     const grid = document.getElementById("categories-grid");
     grid.innerHTML = data.categories.map(cat => `
-      <a href="${CONFIG.BASE_URL}/productos/?categoria=${cat.id}" class="cat-card-lg">
+      <a href="${p}productos/?categoria=${cat.id}" class="cat-card-lg">
         <span class="cat-icon-lg">${cat.icon}</span>
         <h2>${cat.name.toUpperCase()}</h2>
         <p>${cat.description}</p>
