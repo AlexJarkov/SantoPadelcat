@@ -1,18 +1,16 @@
 // utils.js — Helpers reutilizables
-import { CONFIG } from "./config.js";
+
+// Auto-detecta el subpath base del sitio desde la URL de este módulo.
+// Funciona automáticamente en WebStorm, VS Code Live Server, GitHub Pages, etc.
+const _siteBase = new URL(import.meta.url).pathname.replace(/\/assets\/js\/utils\.js$/, "");
 
 /**
- * Calcula el prefijo relativo según la profundidad de la página actual.
- * Funciona en localhost, GitHub Pages con subpath y dominio personalizado.
+ * Calcula el prefijo relativo desde la página actual hasta la raíz del sitio.
  * Ejemplo: root → "", /categorias/ → "../", /productos/detalle.html → "../"
  */
 export function getPrefix() {
-  const base = CONFIG.BASE_URL.replace(/^\/|\/$/g, "");
   let path = window.location.pathname.replace(/\/$/, "");
-  if (base) {
-    const baseWithSlash = "/" + base;
-    if (path.startsWith(baseWithSlash)) path = path.slice(baseWithSlash.length);
-  }
+  if (_siteBase && path.startsWith(_siteBase)) path = path.slice(_siteBase.length);
   path = path.replace(/^\//, "");
   const segments = path.split("/").filter(s => s && !s.includes("."));
   return segments.length > 0 ? "../".repeat(segments.length) : "";

@@ -40,7 +40,7 @@ body::before {
 }
 
 /* ── NAVBAR ── */
-nav {
+#main-nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -513,7 +513,7 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
+  #main-nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .footer-grid { grid-template-columns: 1fr; }
