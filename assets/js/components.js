@@ -19,8 +19,7 @@ export function renderNavbar(activePage = "") {
   return `
   <nav id="main-nav">
     <a href="${p || "./"}" class="logo">
-      <span class="logo-icon">SP</span>
-      SANTO <span>PADEL</span>
+      <img src="${p}assets/images/logos/IMG_2075.png" alt="Santo Padel" style="height: 120px; width: auto; object-fit: contain;">
     </a>
     <ul class="nav-links">
       <li><a href="${p}categorias/" class="${activePage === "categorias" ? "active" : ""}">Categorías</a></li>
@@ -60,8 +59,7 @@ export function renderFooter() {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="${p || "./"}" class="logo">
-          <span class="logo-icon">SP</span>
-          SANTO <span>PADEL</span>
+          <img src="${p}assets/images/logos/IMG_2075.png" alt="Santo Padel" style="height: 100px; width: auto; object-fit: contain;">
         </a>
         <p>Tu tienda especializada en padel. Equipamiento profesional de las mejores marcas del mundo, directo a Bolivia.</p>
         <div class="footer-socials">
@@ -132,10 +130,10 @@ export function initComponents(activePage = "") {
     const nav = document.getElementById("main-nav");
     if (!nav) return;
     if (window.scrollY > 50) {
-      nav.style.padding = "0.6rem 3rem";
+      nav.style.padding = "0.2rem 3rem";
       nav.style.borderBottomColor = "rgba(177,229,1,0.12)";
     } else {
-      nav.style.padding = "1rem 3rem";
+      nav.style.padding = "0.5rem 3rem";
       nav.style.borderBottomColor = "rgba(177,229,1,0.08)";
     }
   });
